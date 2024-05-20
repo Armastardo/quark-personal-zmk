@@ -1,0 +1,9 @@
+file_format: "1"
+id: q_stamp
+name: Q-Stamp
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: https://github.com/armastardo
