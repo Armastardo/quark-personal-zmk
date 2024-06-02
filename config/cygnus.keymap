@@ -12,15 +12,29 @@
 / {
     combos { compatible = "zmk,combos"; };
 
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <0>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E  &kp R      &kp T      &kp Y          &kp U  &kp I      &kp O       &kp P          &kp LEFT_BRACKET
-&kp LEFT_GUI    &kp A  &kp S  &kp D  &kp F      &kp G      &kp H          &kp J  &kp K      &kp L       &kp SEMICOLON  &kp ENTER
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V      &kp B      &kp N          &kp M  &kp COMMA  &kp PERIOD  &kp SLASH      &kp ESC
-                              &mo 3  &kp ENTER  &kp SPACE  &kp BACKSPACE  &mo 1  &mo 2
+&kp TAB         &kp Q               &kp W           &kp E       &kp R             &kp T      &kp Y          &kp U              &kp I            &kp O           &kp P                &kp LEFT_BRACKET
+&kp LEFT_GUI    &hm LEFT_CONTROL A  &hm LEFT_ALT S  &hm LGUI D  &hm LEFT_SHIFT F  &kp G      &kp H          &hm RIGHT_SHIFT J  &hm RIGHT_GUI K  &hm LEFT_ALT L  &hm RCTRL SEMICOLON  &kp ENTER
+&kp LEFT_SHIFT  &kp Z               &kp X           &kp C       &kp V             &kp B      &kp N          &kp M              &kp COMMA        &kp PERIOD      &kp SLASH            &kp ESC
+                                                    &mo 3       &kp ENTER         &kp SPACE  &kp BACKSPACE  &mo 1              &mo 2
             >;
         };
 
