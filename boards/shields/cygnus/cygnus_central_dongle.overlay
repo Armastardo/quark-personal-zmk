@@ -3,12 +3,15 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "cygnus-layout.dtsi"
 
 / {
+	model = "cygnus";
+
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
         zephyr,display = &oled;
     };
 
@@ -46,4 +49,4 @@
         inversion-on;
         prechargep = <0x22>;
     };
-}; 
+};
