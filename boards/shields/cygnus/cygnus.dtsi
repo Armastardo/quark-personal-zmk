@@ -5,8 +5,10 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "cygnus-layout.dtsi"
 
 / {
+	model = "cygnus";
 
 	chosen {
 		zmk,kscan = &kscan0;
